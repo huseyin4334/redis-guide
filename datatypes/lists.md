@@ -11,6 +11,9 @@ List can be use for;
 - Event queue
 
 # Commands
+
+> https://redis.io/docs/latest/commands/?group=list
+
 ## LPUSH, RPUSH, LRANGE
 LPUSH and RPUSH are used to insert elements into a list. LPUSH inserts elements at the beginning of the list, while RPUSH inserts elements at the end of the list.
 
