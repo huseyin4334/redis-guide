@@ -1,0 +1,15 @@
+services:
+  redis-master:
+    image: redis:latest
+    container_name: redis-master
+    ports:
+      - "6379:6379"
+    command: redis-server --requirepass password --dbfilename dump.rdb # dbfilename is required to save data in a file
+  redis-slave-1:
+    image: redis:latest
+    container_name: redis-slave-1
+    command: redis-server --slaveof redis-master 6379 --requirepass password
+  redis-slave-2:
+    image: redis:latest
+    container_name: redis-slave-2
+    command: redis-server --slaveof redis-master 6379 --requirepass password
