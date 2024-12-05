@@ -12,6 +12,12 @@ docker run -d --name redis -p 6379:6379 redis
 ## Usage
 ```bash
 docker exec -it redis redis-cli
+
+# if we have a password
+docker exec -it redis redis-cli -a password
+# or
+docker exec -it redis redis-cli
+AUTH username password
 ```
 
 redis-cli is the Redis command line interface that allows you to interact with the Redis server.
