@@ -1,0 +1,22 @@
+singleServerConfig:
+  address: "redis://localhost:6379"
+  nettyThreads: 32
+  #eventLoopGroup: "nio" # defines the type of EventLoopGroup to use for Netty connections. Available values: nio, epoll, kqueue. Default is nio.
+  threads: 16
+  database: 0
+  clientName: hibernate-client
+  connectTimeout: 10000
+  connectionPoolSize: 64
+  connectionMinimumIdleSize: 16
+  idleConnectionTimeout: 10000
+  keepAlive: true
+
+
+
+
+
+# threads - Different from nettyThreads, this parameter defines the number of threads used for general redisson operations. (listeners, i/o, etc)
+# nettThreads - defines the number of threads shared between all connections to Redis server by Redisson. Netty threads are used for Redis response decoding and command sending.
+# https://redisson.org/docs/configuration/#using-redisson-api
+# idle connections are connections that are not used for a certain period of time. If the connection is idle for more than idleConnectionTimeout milliseconds, it will be closed.
+# if we can't connect the redis in 10 seconds, we will throw an exception and stop the application
