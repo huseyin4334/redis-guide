@@ -15,6 +15,7 @@
  */
 package com.example.redis.model;
 
+import jakarta.persistence.Cacheable;
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.validation.constraints.NotBlank;
@@ -27,6 +28,8 @@ import jakarta.validation.constraints.NotBlank;
  * @author Juergen Hoeller
  * @author Wick Dynex
  */
+@Cacheable
+@org.hibernate.annotations.Cache(usage = org.hibernate.annotations.CacheConcurrencyStrategy.READ_WRITE)
 @MappedSuperclass
 public class NamedEntity extends BaseEntity {
 

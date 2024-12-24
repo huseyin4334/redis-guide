@@ -17,6 +17,7 @@ package com.example.redis.vet;
 
 import com.example.redis.model.NamedEntity;
 
+import jakarta.persistence.Cacheable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
@@ -25,6 +26,8 @@ import jakarta.persistence.Table;
  *
  * @author Juergen Hoeller
  */
+@Cacheable
+@org.hibernate.annotations.Cache(usage = org.hibernate.annotations.CacheConcurrencyStrategy.READ_WRITE)
 @Entity
 @Table(name = "specialties")
 public class Specialty extends NamedEntity {

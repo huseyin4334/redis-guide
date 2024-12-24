@@ -1,8 +1,5 @@
 singleServerConfig:
   address: "redis://localhost:6379"
-  nettyThreads: 32
-  #eventLoopGroup: "nio" # defines the type of EventLoopGroup to use for Netty connections. Available values: nio, epoll, kqueue. Default is nio.
-  threads: 16
   database: 0
   clientName: hibernate-client
   connectTimeout: 10000
